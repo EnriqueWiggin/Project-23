@@ -27,6 +27,15 @@ function setup() {
 	groundSprite=createSprite(width/2, height-35, width,10);
 	groundSprite.shapeColor=color(255)
 
+	rightSideBin=createSprite(250,610,20,100);
+	rightSideBin.shapeColor=("orange");
+
+	leftSideBin=createSprite(450,610,20,100);
+	leftSideBin.shapeColor=("orange");
+
+	bottomBin=createSprite(350,650,200,20);
+	bottomBin.shapeColor=("orange");
+
 
 	engine = Engine.create();
 	world = engine.world;
