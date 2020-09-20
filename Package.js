@@ -1,18 +1,19 @@
 class Package {
     constructor(x, y, width, height) {
       var options = {
-          'restitution':0.8,
+          'restitution':0.4,
           'friction':0.3,
           'density':1.0
+          'isStatic:true'
       }
       this.Package(x, y, width, height, options);
       this.width = width;
       this.height = height;
       console.log(this.body);
-      World.add(world, this.body);
+      World.add(world, packageBody);
     }
     Package(x, y, width, height, options) {
-        this.body = Bodies.rectangle(x, y, width, height, options);
+        packageBody = Bodies.circle(width/2, 200, 5);
     }
 
     display(){
