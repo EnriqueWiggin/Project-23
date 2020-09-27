@@ -27,26 +27,42 @@ function setup() {
 	groundSprite=createSprite(width/2, height-35, width,10);
 	groundSprite.shapeColor=color(255)
 
+	engine = Engine.create();
+	world = engine.world;
+
+	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:0.4, isStatic:true});
+	World.add(world, packageBody);
+
+	//Create a Ground
+	ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
+	World.add(world, ground);
+
 	rightSideBin=createSprite(250,610,20,100);
 	rightSideBin.shapeColor=("orange");
+
+	boxRightBody = Bodies.rectangle(250, 610, 20,100 , {isStatic:true} );
+	World.add(world, boxRightBody);
+
 
 	leftSideBin=createSprite(450,610,20,100);
 	leftSideBin.shapeColor=("orange");
 
+	boxLeftBody = Bodies.rectangle(450, 610, 20,100 , {isStatic:true} );
+	World.add(world, boxLeftBody)
+
 	bottomBin=createSprite(350,650,200,20);
 	bottomBin.shapeColor=("orange");
 
+	boxBottomBody = Bodies.rectangle(350, 630, 400,20 , {isStatic:true} );
+	World.add(world, boxBottomBody);
 
-	engine = Engine.create();
-	world = engine.world;
 
-	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:3, isStatic:true});
-	World.add(world, packageBody);
 	
 
-	//Create a Ground
-	ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
- 	World.add(world, ground);
+	
+	
+
+	
 
 
 	Engine.run(engine);
@@ -63,13 +79,6 @@ function draw() {
  
 }
 
-function keyPressed() {
- if (keyCode === DOWN_ARROW) {
-isStatic=false;
-packageSprite
-    
-  }
-}
 
 function keyPressed() 
 { 
